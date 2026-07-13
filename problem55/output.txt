@@ -1,1 +1,5 @@
+To get output here i just do 
+python3 main.py > output.txt
+which gives
+
 249
