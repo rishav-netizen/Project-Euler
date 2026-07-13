@@ -1,0 +1,36 @@
+def get_letter_count(n):
+    if n == 1000:
+        return 11  # len("onethousand")
+    
+    count = 0
+    
+    # 1. Extract and process the Hundreds place
+    if n >= 100:
+        hundreds_digit = n // 100
+        count += ones[hundreds_digit] + HUNDRED_LEN
+        
+        # Check if we need to add the British "and"
+        if n % 100 != 0:
+            count += AND_LEN
+            
+    # 2. Extract the remaining 2 digits
+    remainder = n % 100
+    
+    # How are you going to route this 'remainder' through 
+    # the 'teens', 'tens', and 'ones' maps?
+    # (Hint: Remember that 0 doesn't add any letters!)
+    
+    return count
+
+# Main loop
+total_letters = 0
+for i in range(1, 1001):
+    total_letters += get_letter_count(i)
+
+print(total_letters)
+
+
+''''
+205
+200
+234
