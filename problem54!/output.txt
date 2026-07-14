@@ -1,0 +1,3 @@
+Scores:
+Player 1: 376
+Player 2: 624
