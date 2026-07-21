@@ -1,0 +1,2 @@
+The five primes are: 13 5197 5701 6733 8389
+Sum: 26033
