@@ -23,8 +23,6 @@ def main():
             print(asciiSum)
             print(decryptedValue)
             break
-
-            
         
         
 
