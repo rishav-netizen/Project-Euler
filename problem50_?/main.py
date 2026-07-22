@@ -1,4 +1,4 @@
-def prime_seive(n: int) -> list:
+def prime_sieve(n: int) -> list:
     if n <= 1:
         return []
 
@@ -57,7 +57,7 @@ from time import perf_counter
 start = perf_counter()
 
 MILLION = 1000000
-primes = prime_seive(MILLION)
+primes = prime_sieve(MILLION)
 prime_set = set(primes)
 
 answer = main()
