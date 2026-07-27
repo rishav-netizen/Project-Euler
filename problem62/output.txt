@@ -1,0 +1,2 @@
+List of 5 permutable cubes: [5027, 7061, 7202, 8288, 8384]
+The smallest cube is: 5027 ^ 3 = 127035954683
