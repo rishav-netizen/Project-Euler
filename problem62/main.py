@@ -1,10 +1,7 @@
 from itertools import permutations
-import math
-
-# print("".join(sorted("543")))
 
 n = 405
-found = False
+found = Falsed 
 table = {}
 while not found:
     cube = n**3
