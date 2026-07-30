@@ -24,8 +24,6 @@ def get_period_length(n: int) -> int:
         # print(pairs)
     return count
 
-    
-
 def main():
     N = 10000
     odd_period = 0
