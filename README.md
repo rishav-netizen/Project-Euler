@@ -390,7 +390,7 @@ For each problem, I generally try to:
 
 ## 🚀 Progress
 
-**Problems currently represented in this repository:** `0–65`, `67`, and `92`
+**Problems currently represented in this repository:** `0–65`, `67`, `92` and `97`
 
 This repository is a continuous learning project and will grow as I solve more Project Euler problems.
 
