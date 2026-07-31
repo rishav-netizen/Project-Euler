@@ -6,10 +6,20 @@
 
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![Project Euler](https://img.shields.io/badge/Project-Euler-6B4F2A?style=for-the-badge)
+![Beautiful Soup](https://img.shields.io/badge/Beautiful_Soup-Web_Scraping-4B8BBE?style=for-the-badge)
+![Requests](https://img.shields.io/badge/Requests-HTTP-2C5BB4?style=for-the-badge&logo=python&logoColor=white)
+![Rich](https://img.shields.io/badge/Rich-Terminal_UI-8A2BE2?style=for-the-badge)
+![LaTeX](https://img.shields.io/badge/LaTeX-008080?style=for-the-badge&logo=latex&logoColor=white)
 ![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
 ![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)
+![VS Code](https://img.shields.io/badge/VS_Code-007ACC?style=for-the-badge&logo=visualstudiocode&logoColor=white)
+![macOS](https://img.shields.io/badge/macOS-000000?style=for-the-badge&logo=apple&logoColor=white)
 
 *A collection of my solutions to Project Euler problems while practicing mathematics, algorithms, problem solving, and Python.*
+
+<br>
+
+**Solve · Scrape · Optimize · Repeat**
 
 </div>
 
@@ -17,7 +27,7 @@
 
 ## 📖 About This Repository
 
-This repository contains my solutions to **Project Euler** problems. Each problem is kept in its own directory and, in general, contains a `main.py` implementation.
+This repository contains my solutions to **Project Euler** problems, along with a small **command-line web scraper** for quickly fetching and displaying problem statements. Each problem is kept in its own directory and, in general, contains a `main.py` implementation.
 
 The goal of this repository is not only to reach the correct answer, but also to improve my understanding of **algorithmic thinking, mathematical reasoning, optimization, and Python programming**.
 
@@ -35,6 +45,7 @@ projectEuler/
 ├── ...
 ├── problem67/
 ├── problem92/
+├── scraper.py
 └── README.md
 ```
 
@@ -44,6 +55,124 @@ Most problem directories follow this structure:
 problemN/
 └── main.py
 ```
+
+---
+
+## 🕸️ Project Euler Problem Scraper
+
+This repository also includes `scraper.py`, a small command-line web scraper that fetches a Project Euler problem directly from the website and prints a clean, readable version in the terminal.
+
+### 🔧 Scraper Tech Stack
+
+| Library | Purpose |
+| :--- | :--- |
+| `requests` | Sends the HTTP request to Project Euler |
+| `beautifulsoup4` | Parses the returned HTML and extracts the problem content |
+| `pylatexenc` | Converts LaTeX expressions into readable terminal text |
+| `rich` | Adds styled and colored terminal output |
+
+### Usage
+
+Pass the Project Euler problem number as a command-line argument:
+
+```bash
+python3 scraper.py 10
+```
+
+The script fetches `https://projecteuler.net/problem=10` and displays the problem number, title, and cleaned problem statement directly in the terminal.
+
+If no problem number is supplied, the script prints the expected usage format. It also handles request failures and exits with an error message if the problem page cannot be fetched.
+
+### 📦 Installation & Setup
+
+Clone the repository and move into it:
+
+```bash
+git clone https://github.com/rishav-netizen/projectEuler.git
+cd projectEuler
+```
+
+#### Option 1 — Install directly
+
+Install all libraries required by the scraper:
+
+```bash
+python3 -m pip install requests beautifulsoup4 pylatexenc rich
+```
+
+#### Option 2 — Use a virtual environment
+
+Using a virtual environment keeps the scraper dependencies isolated from the rest of your Python installation:
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+python3 -m pip install --upgrade pip
+python3 -m pip install requests beautifulsoup4 pylatexenc rich
+```
+
+When you are finished, leave the virtual environment with:
+
+```bash
+deactivate
+```
+
+### ✅ Verify the Installation
+
+You can quickly check that all required libraries are available with:
+
+```bash
+python3 -c "import requests, bs4, pylatexenc, rich; print('All scraper dependencies installed successfully!')"
+```
+
+Then try the scraper:
+
+```bash
+python3 scraper.py 10
+```
+## 🛠️ Tools & Technologies
+
+<div align="center">
+
+| Category | Technologies |
+| :--- | :--- |
+| **Language** | Python 3 |
+| **Problem Solving** | Project Euler · Algorithms · Mathematics |
+| **Web Scraping** | Requests · Beautiful Soup |
+| **Text Processing** | pylatexenc · LaTeX |
+| **Terminal Output** | Rich |
+| **Version Control** | Git · GitHub |
+| **Development** | VS Code · macOS Terminal |
+
+</div>
+
+---
+
+## 💻 Quick Start
+
+```bash
+# Clone the repository
+git clone https://github.com/rishav-netizen/projectEuler.git
+
+# Enter the project
+cd projectEuler
+
+# Create an isolated Python environment
+python3 -m venv .venv
+source .venv/bin/activate
+
+# Install scraper dependencies
+python3 -m pip install requests beautifulsoup4 pylatexenc rich
+
+# Fetch a Project Euler problem
+python3 scraper.py 10
+
+# Run its solution
+python3 problem10/main.py
+```
+
+---
+
 
 ---
 
@@ -132,9 +261,21 @@ problemN/
 
 ## 🧠 Concepts Practiced
 
-`Algorithms` · `Number Theory` · `Prime Numbers` · `Combinatorics` · `Dynamic Programming` · `Sequences` · `Recursion` · `Searching` · `Optimization` · `Python`
+`Algorithms` · `Number Theory` · `Prime Numbers` · `Combinatorics` · `Dynamic Programming` · `Sequences` · `Recursion` · `Searching` · `Optimization` · `Python` · `Web Scraping` · `HTTP Requests` · `HTML Parsing` · `LaTeX Processing` · `CLI Tools`
 
 Working through Project Euler has helped me practice turning mathematical ideas into efficient programs and thinking about how an algorithm scales beyond small inputs.
+## 🌟 Repository Highlights
+
+- 🧮 Dozens of solved Project Euler problems
+- 🕸️ Built-in CLI problem scraper
+- 🎨 Rich terminal formatting
+- ∑ LaTeX-to-text conversion for mathematical expressions
+- ⚡ Focus on efficient mathematical and algorithmic solutions
+- 📂 One-directory-per-problem organization
+- 🔄 Continuously expanding as more problems are solved
+
+---
+
 
 ---
 
@@ -185,6 +326,10 @@ This repository contains working solutions to Project Euler problems. If you are
 
 ### 🧠 Mathematics × Algorithms × Code
 
-*Solving one problem at a time.*
+**Project Euler · Python · Web Scraping · Problem Solving**
+
+*Solving one problem at a time. Optimizing one solution at a time.*
+
+⭐ **If you find this repository interesting, consider giving it a star!**
 
 </div>
