@@ -46,6 +46,7 @@ projectEuler/
 ├── problem67/
 ├── problem92/
 ├── scraper.py
+├── folders.py
 └── README.md
 ```
 
@@ -130,6 +131,80 @@ Then try the scraper:
 ```bash
 python3 scraper.py 10
 ```
+---
+
+## 📁 Automatic Problem Folder Generator
+
+The repository also includes `folders.py`, a small automation utility I use to generate the directory structure for new Project Euler problems instead of manually creating every folder and file.
+
+It uses Python's built-in [`pathlib`](https://docs.python.org/3/library/pathlib.html) module, so **no additional library installation is required**.
+
+### ⚙️ How It Works
+
+The script defines the first and last problem numbers to generate:
+
+```python
+baseProblem = 92
+finalProblem = 92
+```
+
+It then loops through that range and uses `Path` to create a directory for every problem:
+
+```python
+folder = Path(f"problem{i}")
+folder.mkdir(exist_ok=True)
+```
+
+Inside each generated directory, the script automatically creates two starter files:
+
+```python
+(folder / "main.py").touch(exist_ok=True)
+(folder / "output.txt").touch(exist_ok=True)
+```
+
+This means generating a problem produces a structure like:
+
+```text
+problem92/
+├── main.py
+└── output.txt
+```
+
+### 🚀 Generate Multiple Problems at Once
+
+The useful part is that `baseProblem` and `finalProblem` can represent an entire range. For example:
+
+```python
+baseProblem = 93
+finalProblem = 100
+```
+
+Running the script would automatically prepare:
+
+```text
+problem93/
+problem94/
+problem95/
+...
+problem100/
+```
+
+with a `main.py` and `output.txt` already created inside every directory.
+
+Run the generator from the repository root with:
+
+```bash
+python3 folders.py
+```
+
+### 🛡️ Safe to Run Again
+
+Both `mkdir()` and `touch()` use `exist_ok=True`. This allows the generator to be run again without failing just because a generated folder or starter file already exists.
+
+> 💡 **Why I made it:** As the number of solved problems grows, this removes repetitive setup work and lets me create the boilerplate for an entire batch of Project Euler problems with one command.
+
+---
+
 ## 🛠️ Tools & Technologies
 
 <div align="center">
@@ -142,6 +217,7 @@ python3 scraper.py 10
 | **Text Processing** | pylatexenc · LaTeX |
 | **Terminal Output** | Rich |
 | **Version Control** | Git · GitHub |
+| **Automation** | pathlib · Folder/File Generation |
 | **Development** | VS Code · macOS Terminal |
 
 </div>
@@ -163,6 +239,9 @@ source .venv/bin/activate
 
 # Install scraper dependencies
 python3 -m pip install requests beautifulsoup4 pylatexenc rich
+
+# Generate starter problem directories/files when needed
+python3 folders.py
 
 # Fetch a Project Euler problem
 python3 scraper.py 10
@@ -232,7 +311,7 @@ python3 problem10/main.py
 | **45** | [View Problem](https://projecteuler.net/problem=45) | [View Code](./problem45/main.py) | ✅ Solved |
 | **46** | [View Problem](https://projecteuler.net/problem=46) | [View Code](./problem46/main.py) | ✅ Solved |
 | **47** | [View Problem](https://projecteuler.net/problem=47) | [View Code](./problem47_*/main.py) | ✅ Solved |
-| **48** | [View Problem](https://projecteuler.net/problem=48) | [View Code](./problem48_*/main.py) | ✅ Solved |
+| **48」 | [View Problem](https://projecteuler.net/problem=48) | [View Code](./problem48_*/main.py) | ✅ Solved |
 | **49** | [View Problem](https://projecteuler.net/problem=49) | [View Code](./problem49_*/main.py) | ✅ Solved |
 | **50** | [View Problem](https://projecteuler.net/problem=50) | [View Code](./problem50_*/main.py) | ✅ Solved |
 | **51** | [View Problem](https://projecteuler.net/problem=51) | [View Code](./problem51_*/main.py) | ✅ Solved |
@@ -261,13 +340,13 @@ python3 problem10/main.py
 
 ## 🧠 Concepts Practiced
 
-`Algorithms` · `Number Theory` · `Prime Numbers` · `Combinatorics` · `Dynamic Programming` · `Sequences` · `Recursion` · `Searching` · `Optimization` · `Python` · `Web Scraping` · `HTTP Requests` · `HTML Parsing` · `LaTeX Processing` · `CLI Tools`
+`Algorithms` · `Number Theory` · `Prime Numbers` · `Combinatorics` · `Dynamic Programming` · `Sequences` · `Recursion` · `Searching` · `Optimization` · `Python` · `Web Scraping` · `HTTP Requests` · `HTML Parsing` · `LaTeX Processing` · `CLI Tools` · `File System Automation` · `pathlib`
 
-Working through Project Euler has helped me practice turning mathematical ideas into efficient programs and thinking about how an algorithm scales beyond small inputs.
 ## 🌟 Repository Highlights
 
 - 🧮 Dozens of solved Project Euler problems
 - 🕸️ Built-in CLI problem scraper
+- 📁 Automatic problem directory and starter-file generator
 - 🎨 Rich terminal formatting
 - ∑ LaTeX-to-text conversion for mathematical expressions
 - ⚡ Focus on efficient mathematical and algorithmic solutions
