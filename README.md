@@ -53,76 +53,76 @@ problemN/
 <summary><b>📋 View Project Euler Solutions</b></summary>
 <br>
 
-| Problem | Solution | Status |
-| :---: | :---: | :---: |
-| **0** | [View Code](./problem0/main.py) | ✅ Solved |
-| **1** | [View Code](./problem1/main.py) | ✅ Solved |
-| **2** | [View Code](./problem2/main.py) | ✅ Solved |
-| **3** | [View Code](./problem3/main.py) | ✅ Solved |
-| **4** | [View Code](./problem4/main.py) | ✅ Solved |
-| **5** | [View Code](./problem5/main.py) | ✅ Solved |
-| **6** | [View Code](./problem6/main.py) | ✅ Solved |
-| **7** | [View Code](./problem7/main.py) | ✅ Solved |
-| **8** | [View Code](./problem8/main.py) | ✅ Solved |
-| **9** | [View Code](./problem9/main.py) | ✅ Solved |
-| **10** | [View Code](./problem10/main.py) | ✅ Solved |
-| **11** | [View Code](./problem11/main.py) | ✅ Solved |
-| **12** | [View Code](./problem12/main.py) | ✅ Solved |
-| **13** | [View Code](./problem13/main.py) | ✅ Solved |
-| **14** | [View Code](./problem14/main.py) | ✅ Solved |
-| **15** | [View Code](./problem15/main.py) | ✅ Solved |
-| **16** | [View Code](./problem16/main.py) | ✅ Solved |
-| **17** | [View Code](./problem17/main.py) | ✅ Solved |
-| **18** | [View Code](./problem18/main.py) | ✅ Solved |
-| **19** | [View Code](./problem19/main.py) | ✅ Solved |
-| **20** | [View Code](./problem20/main.py) | ✅ Solved |
-| **21** | [View Code](./problem21/main.py) | ✅ Solved |
-| **22** | [View Code](./problem22/main.py) | ✅ Solved |
-| **23** | [View Code](./problem23/main.py) | ✅ Solved |
-| **24** | [View Code](./problem24/main.py) | ✅ Solved |
-| **25** | [View Code](./problem25/main.py) | ✅ Solved |
-| **26** | [View Code](./problem26/main.py) | ✅ Solved |
-| **27** | [View Code](./problem27/main.py) | ✅ Solved |
-| **28** | [View Code](./problem28/main.py) | ✅ Solved |
-| **29** | [View Code](./problem29/main.py) | ✅ Solved |
-| **30** | [View Code](./problem30/main.py) | ✅ Solved |
-| **31** | [View Code](./problem31_*/main.py) | ✅ Solved |
-| **32** | [View Code](./problem32/main.py) | ✅ Solved |
-| **33** | [View Code](./problem33/main.py) | ✅ Solved |
-| **34** | [View Code](./problem34/main.py) | ✅ Solved |
-| **35** | [View Code](./problem35_*/main.py) | ✅ Solved |
-| **36** | [View Code](./problem36_*/main.py) | ✅ Solved |
-| **37** | [View Code](./problem37/main.py) | ✅ Solved |
-| **38** | [View Code](./problem38/main.py) | ✅ Solved |
-| **39** | [View Code](./problem39/main.py) | ✅ Solved |
-| **40** | [View Code](./problem40/main.py) | ✅ Solved |
-| **41** | [View Code](./problem41/main.py) | ✅ Solved |
-| **42** | [View Code](./problem42/main.py) | ✅ Solved |
-| **43** | [View Code](./problem43/main.py) | ✅ Solved |
-| **44** | [View Code](./problem44/main.py) | ✅ Solved |
-| **45** | [View Code](./problem45/main.py) | ✅ Solved |
-| **46** | [View Code](./problem46/main.py) | ✅ Solved |
-| **47** | [View Code](./problem47_*/main.py) | ✅ Solved |
-| **48** | [View Code](./problem48_*/main.py) | ✅ Solved |
-| **49** | [View Code](./problem49_*/main.py) | ✅ Solved |
-| **50** | [View Code](./problem50_*/main.py) | ✅ Solved |
-| **51** | [View Code](./problem51_*/main.py) | ✅ Solved |
-| **52** | [View Code](./problem52/main.py) | ✅ Solved |
-| **53** | [View Code](./problem53/main.py) | ✅ Solved |
-| **54** | [View Code](./problem54/main.py) | ✅ Solved |
-| **55** | [View Code](./problem55/main.py) | ✅ Solved |
-| **56** | [View Code](./problem56/main.py) | ✅ Solved |
-| **57** | [View Code](./problem57/main.py) | ✅ Solved |
-| **58** | [View Code](./problem58/main.py) | ✅ Solved |
-| **59** | [View Code](./problem59/main.py) | ✅ Solved |
-| **60** | [View Code](./problem60/main.py) | ✅ Solved |
-| **61** | [View Code](./problem61!/main.py) | ✅ Solved |
-| **62** | [View Code](./problem62/main.py) | ✅ Solved |
-| **63** | [View Code](./problem63/main.py) | ✅ Solved |
-| **64** | [View Code](./problem64/main.py) | ✅ Solved |
-| **65** | [View Code](./problem65/main.py) | ✅ Solved |
-| **67** | [View Code](./problem67_/main.py) | ✅ Solved |
-| **92** | [View Code](./problem92/main.py) | ✅ Solved |
+| Problem | Problem Link | Solution | Status |
+| :---: | :---: | :---: | :---: |
+| **0** | [View Problem](https://projecteuler.net/problem=0) | [View Code](./problem0/main.py) | ✅ Solved |
+| **1** | [View Problem](https://projecteuler.net/problem=1) | [View Code](./problem1/main.py) | ✅ Solved |
+| **2** | [View Problem](https://projecteuler.net/problem=2) | [View Code](./problem2/main.py) | ✅ Solved |
+| **3** | [View Problem](https://projecteuler.net/problem=3) | [View Code](./problem3/main.py) | ✅ Solved |
+| **4** | [View Problem](https://projecteuler.net/problem=4) | [View Code](./problem4/main.py) | ✅ Solved |
+| **5** | [View Problem](https://projecteuler.net/problem=5) | [View Code](./problem5/main.py) | ✅ Solved |
+| **6** | [View Problem](https://projecteuler.net/problem=6) | [View Code](./problem6/main.py) | ✅ Solved |
+| **7** | [View Problem](https://projecteuler.net/problem=7) | [View Code](./problem7/main.py) | ✅ Solved |
+| **8** | [View Problem](https://projecteuler.net/problem=8) | [View Code](./problem8/main.py) | ✅ Solved |
+| **9** | [View Problem](https://projecteuler.net/problem=9) | [View Code](./problem9/main.py) | ✅ Solved |
+| **10** | [View Problem](https://projecteuler.net/problem=10) | [View Code](./problem10/main.py) | ✅ Solved |
+| **11** | [View Problem](https://projecteuler.net/problem=11) | [View Code](./problem11/main.py) | ✅ Solved |
+| **12** | [View Problem](https://projecteuler.net/problem=12) | [View Code](./problem12/main.py) | ✅ Solved |
+| **13** | [View Problem](https://projecteuler.net/problem=13) | [View Code](./problem13/main.py) | ✅ Solved |
+| **14** | [View Problem](https://projecteuler.net/problem=14) | [View Code](./problem14/main.py) | ✅ Solved |
+| **15** | [View Problem](https://projecteuler.net/problem=15) | [View Code](./problem15/main.py) | ✅ Solved |
+| **16** | [View Problem](https://projecteuler.net/problem=16) | [View Code](./problem16/main.py) | ✅ Solved |
+| **17** | [View Problem](https://projecteuler.net/problem=17) | [View Code](./problem17/main.py) | ✅ Solved |
+| **18** | [View Problem](https://projecteuler.net/problem=18) | [View Code](./problem18/main.py) | ✅ Solved |
+| **19** | [View Problem](https://projecteuler.net/problem=19) | [View Code](./problem19/main.py) | ✅ Solved |
+| **20** | [View Problem](https://projecteuler.net/problem=20) | [View Code](./problem20/main.py) | ✅ Solved |
+| **21** | [View Problem](https://projecteuler.net/problem=21) | [View Code](./problem21/main.py) | ✅ Solved |
+| **22** | [View Problem](https://projecteuler.net/problem=22) | [View Code](./problem22/main.py) | ✅ Solved |
+| **23** | [View Problem](https://projecteuler.net/problem=23) | [View Code](./problem23/main.py) | ✅ Solved |
+| **24** | [View Problem](https://projecteuler.net/problem=24) | [View Code](./problem24/main.py) | ✅ Solved |
+| **25** | [View Problem](https://projecteuler.net/problem=25) | [View Code](./problem25/main.py) | ✅ Solved |
+| **26** | [View Problem](https://projecteuler.net/problem=26) | [View Code](./problem26/main.py) | ✅ Solved |
+| **27** | [View Problem](https://projecteuler.net/problem=27) | [View Code](./problem27/main.py) | ✅ Solved |
+| **28** | [View Problem](https://projecteuler.net/problem=28) | [View Code](./problem28/main.py) | ✅ Solved |
+| **29** | [View Problem](https://projecteuler.net/problem=29) | [View Code](./problem29/main.py) | ✅ Solved |
+| **30** | [View Problem](https://projecteuler.net/problem=30) | [View Code](./problem30/main.py) | ✅ Solved |
+| **31** | [View Problem](https://projecteuler.net/problem=31) | [View Code](./problem31_*/main.py) | ✅ Solved |
+| **32** | [View Problem](https://projecteuler.net/problem=32) | [View Code](./problem32/main.py) | ✅ Solved |
+| **33** | [View Problem](https://projecteuler.net/problem=33) | [View Code](./problem33/main.py) | ✅ Solved |
+| **34** | [View Problem](https://projecteuler.net/problem=34) | [View Code](./problem34/main.py) | ✅ Solved |
+| **35** | [View Problem](https://projecteuler.net/problem=35) | [View Code](./problem35_*/main.py) | ✅ Solved |
+| **36** | [View Problem](https://projecteuler.net/problem=36) | [View Code](./problem36_*/main.py) | ✅ Solved |
+| **37** | [View Problem](https://projecteuler.net/problem=37) | [View Code](./problem37/main.py) | ✅ Solved |
+| **38** | [View Problem](https://projecteuler.net/problem=38) | [View Code](./problem38/main.py) | ✅ Solved |
+| **39** | [View Problem](https://projecteuler.net/problem=39) | [View Code](./problem39/main.py) | ✅ Solved |
+| **40** | [View Problem](https://projecteuler.net/problem=40) | [View Code](./problem40/main.py) | ✅ Solved |
+| **41** | [View Problem](https://projecteuler.net/problem=41) | [View Code](./problem41/main.py) | ✅ Solved |
+| **42** | [View Problem](https://projecteuler.net/problem=42) | [View Code](./problem42/main.py) | ✅ Solved |
+| **43** | [View Problem](https://projecteuler.net/problem=43) | [View Code](./problem43/main.py) | ✅ Solved |
+| **44** | [View Problem](https://projecteuler.net/problem=44) | [View Code](./problem44/main.py) | ✅ Solved |
+| **45** | [View Problem](https://projecteuler.net/problem=45) | [View Code](./problem45/main.py) | ✅ Solved |
+| **46** | [View Problem](https://projecteuler.net/problem=46) | [View Code](./problem46/main.py) | ✅ Solved |
+| **47** | [View Problem](https://projecteuler.net/problem=47) | [View Code](./problem47_*/main.py) | ✅ Solved |
+| **48** | [View Problem](https://projecteuler.net/problem=48) | [View Code](./problem48_*/main.py) | ✅ Solved |
+| **49** | [View Problem](https://projecteuler.net/problem=49) | [View Code](./problem49_*/main.py) | ✅ Solved |
+| **50** | [View Problem](https://projecteuler.net/problem=50) | [View Code](./problem50_*/main.py) | ✅ Solved |
+| **51** | [View Problem](https://projecteuler.net/problem=51) | [View Code](./problem51_*/main.py) | ✅ Solved |
+| **52** | [View Problem](https://projecteuler.net/problem=52) | [View Code](./problem52/main.py) | ✅ Solved |
+| **53** | [View Problem](https://projecteuler.net/problem=53) | [View Code](./problem53/main.py) | ✅ Solved |
+| **54** | [View Problem](https://projecteuler.net/problem=54) | [View Code](./problem54/main.py) | ✅ Solved |
+| **55** | [View Problem](https://projecteuler.net/problem=55) | [View Code](./problem55/main.py) | ✅ Solved |
+| **56** | [View Problem](https://projecteuler.net/problem=56) | [View Code](./problem56/main.py) | ✅ Solved |
+| **57** | [View Problem](https://projecteuler.net/problem=57) | [View Code](./problem57/main.py) | ✅ Solved |
+| **58** | [View Problem](https://projecteuler.net/problem=58) | [View Code](./problem58/main.py) | ✅ Solved |
+| **59** | [View Problem](https://projecteuler.net/problem=59) | [View Code](./problem59/main.py) | ✅ Solved |
+| **60** | [View Problem](https://projecteuler.net/problem=60) | [View Code](./problem60/main.py) | ✅ Solved |
+| **61** | [View Problem](https://projecteuler.net/problem=61) | [View Code](./problem61!/main.py) | ✅ Solved |
+| **62** | [View Problem](https://projecteuler.net/problem=62) | [View Code](./problem62/main.py) | ✅ Solved |
+| **63** | [View Problem](https://projecteuler.net/problem=63) | [View Code](./problem63/main.py) | ✅ Solved |
+| **64** | [View Problem](https://projecteuler.net/problem=64) | [View Code](./problem64/main.py) | ✅ Solved |
+| **65** | [View Problem](https://projecteuler.net/problem=65) | [View Code](./problem65/main.py) | ✅ Solved |
+| **67** | [View Problem](https://projecteuler.net/problem=67) | [View Code](./problem67_/main.py) | ✅ Solved |
+| **92** | [View Problem](https://projecteuler.net/problem=92) | [View Code](./problem92/main.py) | ✅ Solved |
 
 </details>
 
