@@ -1,6 +1,5 @@
 from math import isqrt
 
-
 def get_period_length(n: int) -> int:
     a_not = isqrt(n)
     a_old = a_not
