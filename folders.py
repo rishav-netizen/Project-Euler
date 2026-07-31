@@ -1,6 +1,6 @@
 from pathlib import Path
-baseProblem = 92
-finalProblem = 92
+baseProblem = 97
+finalProblem = 97
 for i in range(baseProblem, finalProblem + 1):
     folder = Path(f"problem{i}")
     folder.mkdir(exist_ok=True)
