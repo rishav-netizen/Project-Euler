@@ -59,7 +59,7 @@ def phi(n: int) -> int:
     return count
 
 MILLION = 1000000
-
+LIMIT = 100
 def test():
     primes = {3, 5, 7, 11}
     composites = {4, 6, 8, 9}
@@ -88,7 +88,7 @@ def main():
     # adding distinct prime factors increases n/ϕ(n) ratio
     # ϕ(p) = p - 1 where p is a prime
 
-    primeSet = sorted(primesTill(1000000))
+    primeSet = sorted(primesTill(LIMIT)) # just product of primes from 2 to 17 
     number = 1
 
     for prime in primeSet:
