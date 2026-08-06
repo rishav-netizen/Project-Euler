@@ -10,16 +10,17 @@
 
 def TotientSieveSum(limit: int):
     phi = (limit + 1) * [0]
-    for i in range(1, limit + 1):
+    for i in range(1, limit + 1): # limit + 1 to be inclusive of the million
         phi[i] = i # assuming all are primes initially
 
     for i in range(2, limit + 1):
+        # when i is a composite (non-prime) number, the inner for loop doesn't run at all, cuz its phi value has been overwritten in previous iterations
         if phi[i] == i: # meaning i is a prime
-            for multiples in range(i, limit + 1, i):
+            for multiples in range(i, limit + 1, i): # calculates phi of all multiples of the prime
                 phi[multiples] = (phi[multiples] // i) * (i - 1)
 
     total = 0
-    for i in range(2, limit + 1):
+    for i in range(2, limit + 1): # since in (n/d) n < d, we exclude 1 and start from 2
         total += phi[i]
 
     return total
