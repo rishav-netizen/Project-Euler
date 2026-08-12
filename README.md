@@ -1,4 +1,4 @@
-<div align="center">
+****<div align="center">
 
 # 🧮 Project Euler Solutions
 
@@ -330,7 +330,17 @@ python3 problem10/main.py
 | **64** | [View Problem](https://projecteuler.net/problem=64) | [View Code](./problem64/main.py) | ✅ Solved |
 | **65** | [View Problem](https://projecteuler.net/problem=65) | [View Code](./problem65/main.py) | ✅ Solved |
 | **67** | [View Problem](https://projecteuler.net/problem=67) | [View Code](./problem67_/main.py) | ✅ Solved |
+| **69** | [View Problem](https://projecteuler.net/problem=69) | [View Code](./problem69_/main.py) | ✅ Solved |
+| **72** | [View Problem](https://projecteuler.net/problem=72) | [View Code](./problem72/main.py) | ✅ Solved |
+| **74** | [View Problem](https://projecteuler.net/problem=74) | [View Code](./problem74/main.py) | ✅ Solved |
+| **76** | [View Problem](https://projecteuler.net/problem=76) | [View Code](./problem76/main.py) | ✅ Solved |
+| **77** | [View Problem](https://projecteuler.net/problem=77) | [View Code](./problem77/main.py) | ✅ Solved |
+| **78** | [View Problem](https://projecteuler.net/problem=78) | [View Code](./problem78/main.py) | ✅ Solved |
+| **79** | [View Problem](https://projecteuler.net/problem=79) | [View Code](./problem79_/main.py) | ✅ Solved |
+| **80** | [View Problem](https://projecteuler.net/problem=80) | [View Code](./problem80/main.py) | ✅ Solved |
+| **85** | [View Problem](https://projecteuler.net/problem=85) | [View Code](./problem85/main.py) | ✅ Solved |
 | **92** | [View Problem](https://projecteuler.net/problem=92) | [View Code](./problem92/main.py) | ✅ Solved |
+| **95** | [View Problem](https://projecteuler.net/problem=95) | [View Code](./problem95/main.py) | ✅ Solved |
 | **97** | [View Problem](https://projecteuler.net/problem=97) | [View Code](./problem97/main.py) | ✅ Solved |
 
 </details>
@@ -390,7 +400,11 @@ For each problem, I generally try to:
 
 ## 🚀 Progress
 
-**Problems currently represented in this repository:** `0–65`, `67`, `92` and `97`
+**Solved problems:** `77`
+
+**Solved problem numbers:** `1–60`, `62–65`, `67`, `69`, `72`, `74`, `76–80`, `85`, `92`, `95`, and `97`.
+
+Problem 61 is currently included as an in-progress solution.
 
 This repository is a continuous learning project and will grow as I solve more Project Euler problems.
 
