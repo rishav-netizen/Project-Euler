@@ -1,0 +1,13 @@
+Checking for upperlimit: 
+295245 False
+354294 False
+413343 True
+
+For the actual answer: 
+Numbers that can be written as the sum of fifth power of their digits: 4150
+Numbers that can be written as the sum of fifth power of their digits: 4151
+Numbers that can be written as the sum of fifth power of their digits: 54748
+Numbers that can be written as the sum of fifth power of their digits: 92727
+Numbers that can be written as the sum of fifth power of their digits: 93084
+Numbers that can be written as the sum of fifth power of their digits: 194979
+Sum of those 6 numbers is 443839

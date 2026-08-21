@@ -1,25 +1,25 @@
-****<div align="center">
+<div align="center">
 
 # 🧮 Project Euler Solutions
 
 ### Mathematical Problems · Algorithms · Python
 
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![Project Euler](https://img.shields.io/badge/Project-Euler-6B4F2A?style=for-the-badge)
+![Project Euler](https://img.shields.io/badge/Project-Euler-6B4F2A?style=for-the-badge&logo=projecteuler&logoColor=white)
+![Problems Solved](https://img.shields.io/badge/Problems_Solved-81%2F85-success?style=for-the-badge)
 ![Beautiful Soup](https://img.shields.io/badge/Beautiful_Soup-Web_Scraping-4B8BBE?style=for-the-badge)
 ![Requests](https://img.shields.io/badge/Requests-HTTP-2C5BB4?style=for-the-badge&logo=python&logoColor=white)
 ![Rich](https://img.shields.io/badge/Rich-Terminal_UI-8A2BE2?style=for-the-badge)
 ![LaTeX](https://img.shields.io/badge/LaTeX-008080?style=for-the-badge&logo=latex&logoColor=white)
 ![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
 ![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)
-![VS Code](https://img.shields.io/badge/VS_Code-007ACC?style=for-the-badge&logo=visualstudiocode&logoColor=white)
 ![macOS](https://img.shields.io/badge/macOS-000000?style=for-the-badge&logo=apple&logoColor=white)
 
-*A collection of my solutions to Project Euler problems while practicing mathematics, algorithms, problem solving, and Python.*
+*A structured collection of solutions to Project Euler problems with dedicated documentation, algorithmic breakdowns, mathematical proofs, and automated tooling.*
 
 <br>
 
-**Solve · Scrape · Optimize · Repeat**
+**Solve · Scrape · Document · Optimize · Repeat**
 
 </div>
 
@@ -27,11 +27,12 @@
 
 ## 📖 About This Repository
 
-This repository contains my solutions to **Project Euler** problems, along with a small **command-line web scraper** for quickly fetching and displaying problem statements. Each problem is kept in its own directory and, in general, contains a `main.py` implementation.
+This repository contains my solutions to **Project Euler** problems, accompanied by in-depth **problem READMEs** documenting the mathematical insights, algorithms, and complexity analyses used.
 
-The goal of this repository is not only to reach the correct answer, but also to improve my understanding of **algorithmic thinking, mathematical reasoning, optimization, and Python programming**.
-
-> Solutions are written as part of my learning process, so implementations may evolve as I discover cleaner or more efficient approaches.
+It also includes:
+- A **command-line problem scraper** (`scraper.py`) for fetching clean problem statements directly from Project Euler.
+- An **automation generator** (`folders.py`) for batch-generating problem workspace directories.
+- Individual **`output.txt`** result logs verifying answers for each problem.
 
 ---
 
@@ -40,379 +41,190 @@ The goal of this repository is not only to reach the correct answer, but also to
 ```text
 projectEuler/
 ├── problem0/
+│   ├── main.py
+│   ├── output.txt
+│   └── README.md
 ├── problem1/
-├── problem2/
+│   ├── main.py
+│   ├── better.py
+│   ├── output.txt
+│   └── README.md
 ├── ...
-├── problem67/
-├── problem92/
 ├── scraper.py
 ├── folders.py
 └── README.md
 ```
 
-Most problem directories follow this structure:
-
-```text
-problemN/
-└── main.py
-```
+Each solved problem directory contains:
+- `main.py`: Primary Python solution implementation (plus alternative/optimized scripts where applicable).
+- `README.md`: Problem description, key learnings, mathematical theorems, code walkthrough, and complexity breakdown.
+- `output.txt`: Captured output from running the solution.
 
 ---
 
 ## 🕸️ Project Euler Problem Scraper
 
-This repository also includes `scraper.py`, a small command-line web scraper that fetches a Project Euler problem directly from the website and prints a clean, readable version in the terminal.
+The repository includes `scraper.py`, a small CLI tool that fetches any Project Euler problem statement directly from the website and displays it in styled terminal format.
 
 ### 🔧 Scraper Tech Stack
 
 | Library | Purpose |
 | :--- | :--- |
-| `requests` | Sends the HTTP request to Project Euler |
-| `beautifulsoup4` | Parses the returned HTML and extracts the problem content |
-| `pylatexenc` | Converts LaTeX expressions into readable terminal text |
-| `rich` | Adds styled and colored terminal output |
+| `requests` | Sends HTTP requests to Project Euler |
+| `beautifulsoup4` | Parses HTML and extracts problem content |
+| `pylatexenc` | Converts embedded LaTeX expressions to clean terminal text |
+| `rich` | Terminal colors and formatting |
 
 ### Usage
 
-Pass the Project Euler problem number as a command-line argument:
-
 ```bash
 python3 scraper.py 10
 ```
 
-The script fetches `https://projecteuler.net/problem=10` and displays the problem number, title, and cleaned problem statement directly in the terminal.
-
-If no problem number is supplied, the script prints the expected usage format. It also handles request failures and exits with an error message if the problem page cannot be fetched.
-
-### 📦 Installation & Setup
-
-Clone the repository and move into it:
-
-```bash
-git clone https://github.com/rishav-netizen/projectEuler.git
-cd projectEuler
-```
-
-#### Option 1 — Install directly
-
-Install all libraries required by the scraper:
-
-```bash
-python3 -m pip install requests beautifulsoup4 pylatexenc rich
-```
-
-#### Option 2 — Use a virtual environment
-
-Using a virtual environment keeps the scraper dependencies isolated from the rest of your Python installation:
-
-```bash
-python3 -m venv .venv
-source .venv/bin/activate
-python3 -m pip install --upgrade pip
-python3 -m pip install requests beautifulsoup4 pylatexenc rich
-```
-
-When you are finished, leave the virtual environment with:
-
-```bash
-deactivate
-```
-
-### ✅ Verify the Installation
-
-You can quickly check that all required libraries are available with:
-
-```bash
-python3 -c "import requests, bs4, pylatexenc, rich; print('All scraper dependencies installed successfully!')"
-```
-
-Then try the scraper:
-
-```bash
-python3 scraper.py 10
-```
 ---
 
-## 📁 Automatic Problem Folder Generator
+## 📁 Problem Boilerplate Generator
 
-The repository also includes `folders.py`, a small automation utility I use to generate the directory structure for new Project Euler problems instead of manually creating every folder and file.
-
-It uses Python's built-in [`pathlib`](https://docs.python.org/3/library/pathlib.html) module, so **no additional library installation is required**.
-
-### ⚙️ How It Works
-
-The script defines the first and last problem numbers to generate:
-
-```python
-baseProblem = 92
-finalProblem = 92
-```
-
-It then loops through that range and uses `Path` to create a directory for every problem:
-
-```python
-folder = Path(f"problem{i}")
-folder.mkdir(exist_ok=True)
-```
-
-Inside each generated directory, the script automatically creates two starter files:
-
-```python
-(folder / "main.py").touch(exist_ok=True)
-(folder / "output.txt").touch(exist_ok=True)
-```
-
-This means generating a problem produces a structure like:
-
-```text
-problem92/
-├── main.py
-└── output.txt
-```
-
-### 🚀 Generate Multiple Problems at Once
-
-The useful part is that `baseProblem` and `finalProblem` can represent an entire range. For example:
-
-```python
-baseProblem = 93
-finalProblem = 100
-```
-
-Running the script would automatically prepare:
-
-```text
-problem93/
-problem94/
-problem95/
-...
-problem100/
-```
-
-with a `main.py` and `output.txt` already created inside every directory.
-
-Run the generator from the repository root with:
+`folders.py` automates directory creation and boilerplate setup for batches of problems using Python's built-in `pathlib` module:
 
 ```bash
 python3 folders.py
 ```
 
-### 🛡️ Safe to Run Again
-
-Both `mkdir()` and `touch()` use `exist_ok=True`. This allows the generator to be run again without failing just because a generated folder or starter file already exists.
-
-> 💡 **Why I made it:** As the number of solved problems grows, this removes repetitive setup work and lets me create the boilerplate for an entire batch of Project Euler problems with one command.
-
 ---
 
-## 🛠️ Tools & Technologies
-
-<div align="center">
-
-| Category | Technologies |
-| :--- | :--- |
-| **Language** | Python 3 |
-| **Problem Solving** | Project Euler · Algorithms · Mathematics |
-| **Web Scraping** | Requests · Beautiful Soup |
-| **Text Processing** | pylatexenc · LaTeX |
-| **Terminal Output** | Rich |
-| **Version Control** | Git · GitHub |
-| **Automation** | pathlib · Folder/File Generation |
-| **Development** | VS Code · macOS Terminal |
-
-</div>
-
----
-
-## 💻 Quick Start
-
-```bash
-# Clone the repository
-git clone https://github.com/rishav-netizen/projectEuler.git
-
-# Enter the project
-cd projectEuler
-
-# Create an isolated Python environment
-python3 -m venv .venv
-source .venv/bin/activate
-
-# Install scraper dependencies
-python3 -m pip install requests beautifulsoup4 pylatexenc rich
-
-# Generate starter problem directories/files when needed
-python3 folders.py
-
-# Fetch a Project Euler problem
-python3 scraper.py 10
-
-# Run its solution
-python3 problem10/main.py
-```
-
----
-
-
----
-
-## 🧩 Solutions
+## 🧩 Solutions & Learnings
 
 <details open>
-<summary><b>📋 View Project Euler Solutions</b></summary>
+<summary><b>📋 View All Solutions & Documentation (85 Problems)</b></summary>
 <br>
 
-| Problem | Problem Link | Solution | Status |
-| :---: | :---: | :---: | :---: |
-| **0** | [View Problem](https://projecteuler.net/problem=0) | [View Code](./problem0/main.py) | ✅ Solved |
-| **1** | [View Problem](https://projecteuler.net/problem=1) | [View Code](./problem1/main.py) | ✅ Solved |
-| **2** | [View Problem](https://projecteuler.net/problem=2) | [View Code](./problem2/main.py) | ✅ Solved |
-| **3** | [View Problem](https://projecteuler.net/problem=3) | [View Code](./problem3/main.py) | ✅ Solved |
-| **4** | [View Problem](https://projecteuler.net/problem=4) | [View Code](./problem4/main.py) | ✅ Solved |
-| **5** | [View Problem](https://projecteuler.net/problem=5) | [View Code](./problem5/main.py) | ✅ Solved |
-| **6** | [View Problem](https://projecteuler.net/problem=6) | [View Code](./problem6/main.py) | ✅ Solved |
-| **7** | [View Problem](https://projecteuler.net/problem=7) | [View Code](./problem7/main.py) | ✅ Solved |
-| **8** | [View Problem](https://projecteuler.net/problem=8) | [View Code](./problem8/main.py) | ✅ Solved |
-| **9** | [View Problem](https://projecteuler.net/problem=9) | [View Code](./problem9/main.py) | ✅ Solved |
-| **10** | [View Problem](https://projecteuler.net/problem=10) | [View Code](./problem10/main.py) | ✅ Solved |
-| **11** | [View Problem](https://projecteuler.net/problem=11) | [View Code](./problem11/main.py) | ✅ Solved |
-| **12** | [View Problem](https://projecteuler.net/problem=12) | [View Code](./problem12/main.py) | ✅ Solved |
-| **13** | [View Problem](https://projecteuler.net/problem=13) | [View Code](./problem13/main.py) | ✅ Solved |
-| **14** | [View Problem](https://projecteuler.net/problem=14) | [View Code](./problem14/main.py) | ✅ Solved |
-| **15** | [View Problem](https://projecteuler.net/problem=15) | [View Code](./problem15/main.py) | ✅ Solved |
-| **16** | [View Problem](https://projecteuler.net/problem=16) | [View Code](./problem16/main.py) | ✅ Solved |
-| **17** | [View Problem](https://projecteuler.net/problem=17) | [View Code](./problem17/main.py) | ✅ Solved |
-| **18** | [View Problem](https://projecteuler.net/problem=18) | [View Code](./problem18/main.py) | ✅ Solved |
-| **19** | [View Problem](https://projecteuler.net/problem=19) | [View Code](./problem19/main.py) | ✅ Solved |
-| **20** | [View Problem](https://projecteuler.net/problem=20) | [View Code](./problem20/main.py) | ✅ Solved |
-| **21** | [View Problem](https://projecteuler.net/problem=21) | [View Code](./problem21/main.py) | ✅ Solved |
-| **22** | [View Problem](https://projecteuler.net/problem=22) | [View Code](./problem22/main.py) | ✅ Solved |
-| **23** | [View Problem](https://projecteuler.net/problem=23) | [View Code](./problem23/main.py) | ✅ Solved |
-| **24** | [View Problem](https://projecteuler.net/problem=24) | [View Code](./problem24/main.py) | ✅ Solved |
-| **25** | [View Problem](https://projecteuler.net/problem=25) | [View Code](./problem25/main.py) | ✅ Solved |
-| **26** | [View Problem](https://projecteuler.net/problem=26) | [View Code](./problem26/main.py) | ✅ Solved |
-| **27** | [View Problem](https://projecteuler.net/problem=27) | [View Code](./problem27/main.py) | ✅ Solved |
-| **28** | [View Problem](https://projecteuler.net/problem=28) | [View Code](./problem28/main.py) | ✅ Solved |
-| **29** | [View Problem](https://projecteuler.net/problem=29) | [View Code](./problem29/main.py) | ✅ Solved |
-| **30** | [View Problem](https://projecteuler.net/problem=30) | [View Code](./problem30_/main.py) | ✅ Solved |
-| **31** | [View Problem](https://projecteuler.net/problem=31) | [View Code](./problem31_*/main.py) | ✅ Solved |
-| **32** | [View Problem](https://projecteuler.net/problem=32) | [View Code](./problem32/main.py) | ✅ Solved |
-| **33** | [View Problem](https://projecteuler.net/problem=33) | [View Code](./problem33/main.py) | ✅ Solved |
-| **34** | [View Problem](https://projecteuler.net/problem=34) | [View Code](./problem34/main.py) | ✅ Solved |
-| **35** | [View Problem](https://projecteuler.net/problem=35) | [View Code](./problem35_/main.py) | ✅ Solved |
-| **36** | [View Problem](https://projecteuler.net/problem=36) | [View Code](./problem36_/main.py) | ✅ Solved |
-| **37** | [View Problem](https://projecteuler.net/problem=37) | [View Code](./problem37/main.py) | ✅ Solved |
-| **38** | [View Problem](https://projecteuler.net/problem=38) | [View Code](./problem38/main.py) | ✅ Solved |
-| **39** | [View Problem](https://projecteuler.net/problem=39) | [View Code](./problem39/main.py) | ✅ Solved |
-| **40** | [View Problem](https://projecteuler.net/problem=40) | [View Code](./problem40/main.py) | ✅ Solved |
-| **41** | [View Problem](https://projecteuler.net/problem=41) | [View Code](./problem41/main.py) | ✅ Solved |
-| **42** | [View Problem](https://projecteuler.net/problem=42) | [View Code](./problem42/main.py) | ✅ Solved |
-| **43** | [View Problem](https://projecteuler.net/problem=43) | [View Code](./problem43/main.py) | ✅ Solved |
-| **44** | [View Problem](https://projecteuler.net/problem=44) | [View Code](./problem44/main.py) | ✅ Solved |
-| **45** | [View Problem](https://projecteuler.net/problem=45) | [View Code](./problem45/main.py) | ✅ Solved |
-| **46** | [View Problem](https://projecteuler.net/problem=46) | [View Code](./problem46/main.py) | ✅ Solved |
-| **47** | [View Problem](https://projecteuler.net/problem=47) | [View Code](./problem47/main.py) | ✅ Solved |
-| **48** | [View Problem](https://projecteuler.net/problem=48) | [View Code](./problem48/main.py) | ✅ Solved |
-| **49** | [View Problem](https://projecteuler.net/problem=49) | [View Code](./problem49_/main.py) | ✅ Solved |
-| **50** | [View Problem](https://projecteuler.net/problem=50) | [View Code](./problem50_?/main.py) | ✅ Solved |
-| **51** | [View Problem](https://projecteuler.net/problem=51) | [View Code](./problem51_/main.py) | ✅ Solved |
-| **52** | [View Problem](https://projecteuler.net/problem=52) | [View Code](./problem52/main.py) | ✅ Solved |
-| **53** | [View Problem](https://projecteuler.net/problem=53) | [View Code](./problem53/main.py) | ✅ Solved |
-| **54** | [View Problem](https://projecteuler.net/problem=54) | [View Code](./problem54/main.py) | ✅ Solved |
-| **55** | [View Problem](https://projecteuler.net/problem=55) | [View Code](./problem55/main.py) | ✅ Solved |
-| **56** | [View Problem](https://projecteuler.net/problem=56) | [View Code](./problem56/main.py) | ✅ Solved |
-| **57** | [View Problem](https://projecteuler.net/problem=57) | [View Code](./problem57/main.py) | ✅ Solved |
-| **58** | [View Problem](https://projecteuler.net/problem=58) | [View Code](./problem58/main.py) | ✅ Solved |
-| **59** | [View Problem](https://projecteuler.net/problem=59) | [View Code](./problem59/main.py) | ✅ Solved |
-| **60** | [View Problem](https://projecteuler.net/problem=60) | [View Code](./problem60/main.py) | ✅ Solved |
-| **61** | [View Problem](https://projecteuler.net/problem=61) | [View Code](./problem61!/main.py) | ❌ Unsolved |
-| **62** | [View Problem](https://projecteuler.net/problem=62) | [View Code](./problem62/main.py) | ✅ Solved |
-| **63** | [View Problem](https://projecteuler.net/problem=63) | [View Code](./problem63/main.py) | ✅ Solved |
-| **64** | [View Problem](https://projecteuler.net/problem=64) | [View Code](./problem64/main.py) | ✅ Solved |
-| **65** | [View Problem](https://projecteuler.net/problem=65) | [View Code](./problem65/main.py) | ✅ Solved |
-| **67** | [View Problem](https://projecteuler.net/problem=67) | [View Code](./problem67_/main.py) | ✅ Solved |
-| **69** | [View Problem](https://projecteuler.net/problem=69) | [View Code](./problem69_/main.py) | ✅ Solved |
-| **72** | [View Problem](https://projecteuler.net/problem=72) | [View Code](./problem72/main.py) | ✅ Solved |
-| **74** | [View Problem](https://projecteuler.net/problem=74) | [View Code](./problem74/main.py) | ✅ Solved |
-| **76** | [View Problem](https://projecteuler.net/problem=76) | [View Code](./problem76/main.py) | ✅ Solved |
-| **77** | [View Problem](https://projecteuler.net/problem=77) | [View Code](./problem77/main.py) | ✅ Solved |
-| **78** | [View Problem](https://projecteuler.net/problem=78) | [View Code](./problem78/main.py) | ✅ Solved |
-| **79** | [View Problem](https://projecteuler.net/problem=79) | [View Code](./problem79_/main.py) | ✅ Solved |
-| **80** | [View Problem](https://projecteuler.net/problem=80) | [View Code](./problem80/main.py) | ✅ Solved |
-| **85** | [View Problem](https://projecteuler.net/problem=85) | [View Code](./problem85/main.py) | ✅ Solved |
-| **92** | [View Problem](https://projecteuler.net/problem=92) | [View Code](./problem92/main.py) | ✅ Solved |
-| **95** | [View Problem](https://projecteuler.net/problem=95) | [View Code](./problem95/main.py) | ✅ Solved |
-| **97** | [View Problem](https://projecteuler.net/problem=97) | [View Code](./problem97/main.py) | ✅ Solved |
+| Problem | Title | Problem Link | Solution | Learnings & Breakdown | Status |
+| :---: | :--- | :---: | :---: | :---: | :---: |
+| **0** | Sum of Squares of Odd Numbers | Warmup | [View Code](./problem0/main.py) | [View README](./problem0/README.md) | ✅ Solved |
+| **1** | Multiples of 3 or 5 | [Problem 1](https://projecteuler.net/problem=1) | [View Code](./problem1/better.py) | [View README](./problem1/README.md) | ✅ Solved |
+| **2** | Even Fibonacci Numbers | [Problem 2](https://projecteuler.net/problem=2) | [View Code](./problem2/main.py) | [View README](./problem2/README.md) | ✅ Solved |
+| **3** | Largest Prime Factor | [Problem 3](https://projecteuler.net/problem=3) | [View Code](./problem3/main.py) | [View README](./problem3/README.md) | ✅ Solved |
+| **4** | Largest Palindrome Product | [Problem 4](https://projecteuler.net/problem=4) | [View Code](./problem4/main.py) | [View README](./problem4/README.md) | ✅ Solved |
+| **5** | Smallest Multiple | [Problem 5](https://projecteuler.net/problem=5) | [View Code](./problem5/main.py) | [View README](./problem5/README.md) | ✅ Solved |
+| **6** | Sum Square Difference | [Problem 6](https://projecteuler.net/problem=6) | [View Code](./problem6/main.py) | [View README](./problem6/README.md) | ✅ Solved |
+| **7** | 10001st Prime | [Problem 7](https://projecteuler.net/problem=7) | [View Code](./problem7/main.py) | [View README](./problem7/README.md) | ✅ Solved |
+| **8** | Largest Product in a Series | [Problem 8](https://projecteuler.net/problem=8) | [View Code](./problem8/main.py) | [View README](./problem8/README.md) | ✅ Solved |
+| **9** | Special Pythagorean Triplet | [Problem 9](https://projecteuler.net/problem=9) | [View Code](./problem9/bruteForce.py) | [View README](./problem9/README.md) | ✅ Solved |
+| **10** | Summation of Primes | [Problem 10](https://projecteuler.net/problem=10) | [View Code](./problem10/main.py) | [View README](./problem10/README.md) | ✅ Solved |
+| **11** | Largest Product in a Grid | [Problem 11](https://projecteuler.net/problem=11) | [View Code](./problem11/correct.py) | [View README](./problem11/README.md) | ✅ Solved |
+| **12** | Highly Divisible Triangular Number | [Problem 12](https://projecteuler.net/problem=12) | [View Code](./problem12/main.py) | [View README](./problem12/README.md) | ✅ Solved |
+| **13** | Large Sum | [Problem 13](https://projecteuler.net/problem=13) | [View Code](./problem13_/main.py) | [View README](./problem13_/README.md) | ✅ Solved |
+| **14** | Longest Collatz Sequence | [Problem 14](https://projecteuler.net/problem=14) | [View Code](./problem14/main.py) | [View README](./problem14/README.md) | ✅ Solved |
+| **15** | Lattice Paths | [Problem 15](https://projecteuler.net/problem=15) | [View Code](./problem15_/main.py) | [View README](./problem15_/README.md) | ✅ Solved |
+| **16** | Power Digit Sum | [Problem 16](https://projecteuler.net/problem=16) | [View Code](./problem16/main.py) | [View README](./problem16/README.md) | ✅ Solved |
+| **17** | Number Letter Counts | [Problem 17](https://projecteuler.net/problem=17) | [View Code](./problem17_/main.py) | [View README](./problem17_/README.md) | ✅ Solved |
+| **18** | Maximum Path Sum I | [Problem 18](https://projecteuler.net/problem=18) | [View Code](./problem18/main.py) | [View README](./problem18/README.md) | ✅ Solved |
+| **19** | Counting Sundays | [Problem 19](https://projecteuler.net/problem=19) | [View Code](./problem19/main.py) | [View README](./problem19/README.md) | ✅ Solved |
+| **20** | Factorial Digit Sum | [Problem 20](https://projecteuler.net/problem=20) | [View Code](./problem20/main.py) | [View README](./problem20/README.md) | ✅ Solved |
+| **21** | Amicable Numbers | [Problem 21](https://projecteuler.net/problem=21) | [View Code](./problem21/main.py) | [View README](./problem21/README.md) | ✅ Solved |
+| **22** | Names Scores | [Problem 22](https://projecteuler.net/problem=22) | [View Code](./problem22/main.py) | [View README](./problem22/README.md) | ✅ Solved |
+| **23** | Non-Abundant Sums | [Problem 23](https://projecteuler.net/problem=23) | [View Code](./problem23/main.py) | [View README](./problem23/README.md) | ✅ Solved |
+| **24** | Lexicographic Permutations | [Problem 24](https://projecteuler.net/problem=24) | [View Code](./problem24/main.py) | [View README](./problem24/README.md) | ✅ Solved |
+| **25** | 1000-digit Fibonacci Number | [Problem 25](https://projecteuler.net/problem=25) | [View Code](./problem25/main.py) | [View README](./problem25/README.md) | ✅ Solved |
+| **26** | Reciprocal Cycles | [Problem 26](https://projecteuler.net/problem=26) | [View Code](./problem26/main.py) | [View README](./problem26/README.md) | ✅ Solved |
+| **27** | Quadratic Primes | [Problem 27](https://projecteuler.net/problem=27) | [View Code](./problem27_/main.py) | [View README](./problem27_/README.md) | ✅ Solved |
+| **28** | Number Spiral Diagonals | [Problem 28](https://projecteuler.net/problem=28) | [View Code](./problem28/main.py) | [View README](./problem28/README.md) | ✅ Solved |
+| **29** | Distinct Powers | [Problem 29](https://projecteuler.net/problem=29) | [View Code](./problem29/main.py) | [View README](./problem29/README.md) | ✅ Solved |
+| **30** | Digit Fifth Powers | [Problem 30](https://projecteuler.net/problem=30) | [View Code](./problem30_/main.py) | [View README](./problem30_/README.md) | ✅ Solved |
+| **31** | Coin Sums | [Problem 31](https://projecteuler.net/problem=31) | [View Code](./problem31_*/main.py) | [View README](./problem31_*/README.md) | ✅ Solved |
+| **32** | Pandigital Products | [Problem 32](https://projecteuler.net/problem=32) | [View Code](./problem32/main.py) | [View README](./problem32/README.md) | ✅ Solved |
+| **33** | Digit Cancelling Fractions | [Problem 33](https://projecteuler.net/problem=33) | [View Code](./problem33/main.py) | [View README](./problem33/README.md) | ✅ Solved |
+| **34** | Digit Factorials | [Problem 34](https://projecteuler.net/problem=34) | [View Code](./problem34/main.py) | [View README](./problem34/README.md) | ✅ Solved |
+| **35** | Circular Primes | [Problem 35](https://projecteuler.net/problem=35) | [View Code](./problem35_/main.py) | [View README](./problem35_/README.md) | ✅ Solved |
+| **36** | Double-Base Palindromes | [Problem 36](https://projecteuler.net/problem=36) | [View Code](./problem36_/main.py) | [View README](./problem36_/README.md) | ✅ Solved |
+| **37** | Truncatable Primes | [Problem 37](https://projecteuler.net/problem=37) | [View Code](./problem37/main.py) | [View README](./problem37/README.md) | ✅ Solved |
+| **38** | Pandigital Multiples | [Problem 38](https://projecteuler.net/problem=38) | [View Code](./problem38/main.py) | [View README](./problem38/README.md) | ✅ Solved |
+| **39** | Integer Right Triangles | [Problem 39](https://projecteuler.net/problem=39) | [View Code](./problem39/main.py) | [View README](./problem39/README.md) | ✅ Solved |
+| **40** | Champernowne's Constant | [Problem 40](https://projecteuler.net/problem=40) | [View Code](./problem40/main.py) | [View README](./problem40/README.md) | ✅ Solved |
+| **41** | Pandigital Prime | [Problem 41](https://projecteuler.net/problem=41) | [View Code](./problem41/main.py) | [View README](./problem41/README.md) | ✅ Solved |
+| **42** | Coded Triangle Numbers | [Problem 42](https://projecteuler.net/problem=42) | [View Code](./problem42/main.py) | [View README](./problem42/README.md) | ✅ Solved |
+| **43** | Sub-string Divisibility | [Problem 43](https://projecteuler.net/problem=43) | [View Code](./problem43/main.py) | [View README](./problem43/README.md) | ✅ Solved |
+| **44** | Pentagon Numbers | [Problem 44](https://projecteuler.net/problem=44) | [View Code](./problem44/main.py) | [View README](./problem44/README.md) | ✅ Solved |
+| **45** | Triangular, Pentagonal, and Hexagonal | [Problem 45](https://projecteuler.net/problem=45) | [View Code](./problem45/main.py) | [View README](./problem45/README.md) | ✅ Solved |
+| **46** | Goldbach's Other Conjecture | [Problem 46](https://projecteuler.net/problem=46) | [View Code](./problem46_/main.py) | [View README](./problem46_/README.md) | ✅ Solved |
+| **47** | Distinct Primes Factors | [Problem 47](https://projecteuler.net/problem=47) | [View Code](./problem47_/codex_optimized.py) | [View README](./problem47_/README.md) | ✅ Solved |
+| **48** | Self Powers | [Problem 48](https://projecteuler.net/problem=48) | [View Code](./problem48/main.py) | [View README](./problem48/README.md) | ✅ Solved |
+| **49** | Prime Permutations | [Problem 49](https://projecteuler.net/problem=49) | [View Code](./problem49_/better.py) | [View README](./problem49_/README.md) | ✅ Solved |
+| **50** | Consecutive Prime Sum | [Problem 50](https://projecteuler.net/problem=50) | [View Code](./problem50_?/fun.py) | [View README](./problem50_?/README.md) | ✅ Solved |
+| **51** | Prime Digit Replacements | [Problem 51](https://projecteuler.net/problem=51) | [View Code](./problem51_/main.py) | [View README](./problem51_/README.md) | ✅ Solved |
+| **52** | Permuted Multiples | [Problem 52](https://projecteuler.net/problem=52) | [View Code](./problem52/main.py) | [View README](./problem52/README.md) | ✅ Solved |
+| **53** | Combinatoric Selections | [Problem 53](https://projecteuler.net/problem=53) | [View Code](./problem53/main.py) | [View README](./problem53/README.md) | ✅ Solved |
+| **54** | Poker Hands | [Problem 54](https://projecteuler.net/problem=54) | [View Code](./problem54/better.py) | [View README](./problem54/README.md) | ✅ Solved |
+| **55** | Lychrel Numbers | [Problem 55](https://projecteuler.net/problem=55) | [View Code](./problem55/main.py) | [View README](./problem55/README.md) | ✅ Solved |
+| **56** | Powerful Digit Sum | [Problem 56](https://projecteuler.net/problem=56) | [View Code](./problem56/main.py) | [View README](./problem56/README.md) | ✅ Solved |
+| **57** | Square Root Convergents | [Problem 57](https://projecteuler.net/problem=57) | [View Code](./problem57/main.py) | [View README](./problem57/README.md) | ✅ Solved |
+| **58** | Spiral Primes | [Problem 58](https://projecteuler.net/problem=58) | [View Code](./problem58/main.py) | [View README](./problem58/README.md) | ✅ Solved |
+| **59** | XOR Decryption | [Problem 59](https://projecteuler.net/problem=59) | [View Code](./problem59/main.py) | [View README](./problem59/README.md) | ✅ Solved |
+| **60** | Prime Pair Sets | [Problem 60](https://projecteuler.net/problem=60) | [View Code](./problem60/main.py) | [View README](./problem60/README.md) | ✅ Solved |
+| **61** | Cyclical Figurate Numbers | [Problem 61](https://projecteuler.net/problem=61) | [View Code](./problem61!/main.py) | — | ❌ Unsolved |
+| **62** | Cubic Permutations | [Problem 62](https://projecteuler.net/problem=62) | [View Code](./problem62/main.py) | [View README](./problem62/README.md) | ✅ Solved |
+| **63** | Powerful Digit Counts | [Problem 63](https://projecteuler.net/problem=63) | [View Code](./problem63/main.py) | [View README](./problem63/README.md) | ✅ Solved |
+| **64** | Odd Period Square Roots | [Problem 64](https://projecteuler.net/problem=64) | [View Code](./problem64/main.py) | [View README](./problem64/README.md) | ✅ Solved |
+| **65** | Convergents of e | [Problem 65](https://projecteuler.net/problem=65) | [View Code](./problem65/main.py) | — | ❌ Unsolved |
+| **67** | Maximum Path Sum II | [Problem 67](https://projecteuler.net/problem=67) | [View Code](./problem67_/main.py) | [View README](./problem67_/README.md) | ✅ Solved |
+| **69** | Totient Maximum | [Problem 69](https://projecteuler.net/problem=69) | [View Code](./problem69_/main.py) | [View README](./problem69_/README.md) | ✅ Solved |
+| **72** | Counting Fractions | [Problem 72](https://projecteuler.net/problem=72) | [View Code](./problem72/main.py) | [View README](./problem72/README.md) | ✅ Solved |
+| **74** | Digit Factorial Chains | [Problem 74](https://projecteuler.net/problem=74) | [View Code](./problem74/main.py) | [View README](./problem74/README.md) | ✅ Solved |
+| **76** | Counting Summations | [Problem 76](https://projecteuler.net/problem=76) | [View Code](./problem76/main.py) | [View README](./problem76/README.md) | ✅ Solved |
+| **77** | Prime Summations | [Problem 77](https://projecteuler.net/problem=77) | [View Code](./problem77/main.py) | [View README](./problem77/README.md) | ✅ Solved |
+| **78** | Coin Partitions | [Problem 78](https://projecteuler.net/problem=78) | [View Code](./problem78/main.py) | [View README](./problem78/README.md) | ✅ Solved |
+| **79** | Passcode Derivation | [Problem 79](https://projecteuler.net/problem=79) | [View Code](./problem79_/main.py) | [View README](./problem79_/README.md) | ✅ Solved |
+| **80** | Square Root Digital Expansion | [Problem 80](https://projecteuler.net/problem=80) | [View Code](./problem80/better.py) | [View README](./problem80/README.md) | ✅ Solved |
+| **81** | Path Sum: Two Ways | [Problem 81](https://projecteuler.net/problem=81) | [View Code](./problem81/main.py) | [View README](./problem81/README.md) | ✅ Solved |
+| **82** | Path Sum: Three Ways | [Problem 82](https://projecteuler.net/problem=82) | [View Code](./problem82!/main.py) | — | ❌ Unsolved |
+| **85** | Counting Rectangles | [Problem 85](https://projecteuler.net/problem=85) | [View Code](./problem85/main.py) | [View README](./problem85/README.md) | ✅ Solved |
+| **87** | Prime Power Triples | [Problem 87](https://projecteuler.net/problem=87) | [View Code](./problem87/main.py) | [View README](./problem87/README.md) | ✅ Solved |
+| **89** | Roman Numerals | [Problem 89](https://projecteuler.net/problem=89) | [View Code](./problem89!/main.py) | — | ❌ Unsolved |
+| **92** | Square Digit Chains | [Problem 92](https://projecteuler.net/problem=92) | [View Code](./problem92/main.py) | [View README](./problem92/README.md) | ✅ Solved |
+| **95** | Amicable Chains | [Problem 95](https://projecteuler.net/problem=95) | [View Code](./problem95/main.py) | [View README](./problem95/README.md) | ✅ Solved |
+| **97** | Large Non-Mersenne Prime | [Problem 97](https://projecteuler.net/problem=97) | [View Code](./problem97/main.py) | [View README](./problem97/README.md) | ✅ Solved |
+| **99** | Largest Exponential | [Problem 99](https://projecteuler.net/problem=99) | [View Code](./problem99/main.py) | [View README](./problem99/README.md) | ✅ Solved |
+| **104** | Pandigital Fibonacci Ends | [Problem 104](https://projecteuler.net/problem=104) | [View Code](./problem104/main.py) | [View README](./problem104/README.md) | ✅ Solved |
 
 </details>
 
-> The table reflects the problem directories currently present in this repository.
-
 ---
 
-## 🧠 Concepts Practiced
+## 🧠 Concepts & Techniques Practiced
 
-`Algorithms` · `Number Theory` · `Prime Numbers` · `Combinatorics` · `Dynamic Programming` · `Sequences` · `Recursion` · `Searching` · `Optimization` · `Python` · `Web Scraping` · `HTTP Requests` · `HTML Parsing` · `LaTeX Processing` · `CLI Tools` · `File System Automation` · `pathlib`
-
-## 🌟 Repository Highlights
-
-- 🧮 Dozens of solved Project Euler problems
-- 🕸️ Built-in CLI problem scraper
-- 📁 Automatic problem directory and starter-file generator
-- 🎨 Rich terminal formatting
-- ∑ LaTeX-to-text conversion for mathematical expressions
-- ⚡ Focus on efficient mathematical and algorithmic solutions
-- 📂 One-directory-per-problem organization
-- 🔄 Continuously expanding as more problems are solved
-
----
-
+`Number Theory` · `Sieve of Eratosthenes` · `Euler's Totient Function` · `Modular Arithmetic` · `Dynamic Programming` · `Integer Partitions` · `Combinatorics` · `Permutations & Factoradics` · `Binet's Formula` · `Continued Fractions` · `Pythagorean Triples` · `Topological Sorting` · `Graph Cliques` · `Functional Graph Cycles` · `BigInt Precision` · `Sliding Window` · `Web Scraping`
 
 ---
 
 ## ⚙️ Running a Solution
 
-Move into any problem directory and run its Python file:
+Run any solution directly from the repository root:
+
+```bash
+python3 problem10/main.py
+```
+
+Or navigate into the problem directory:
 
 ```bash
 cd problem10
 python3 main.py
 ```
 
-Or run it directly from the repository root:
-
-```bash
-python3 problem10/main.py
-```
-
 ---
 
-## 📝 Approach
+## 🚀 Progress Summary
 
-For each problem, I generally try to:
-
-- Understand the mathematical idea behind the problem
-- Start with a straightforward solution
-- Identify unnecessary computation or repeated work
-- Improve the algorithm when a more efficient approach is possible
-- Keep the Python implementation readable and concise
-
----
-
-## 🚀 Progress
-
-**Solved problems:** `77`
-
-**Solved problem numbers:** `1–60`, `62–65`, `67`, `69`, `72`, `74`, `76–80`, `85`, `92`, `95`, and `97`.
-
-Problem 61 is currently included as an in-progress solution.
-
-This repository is a continuous learning project and will grow as I solve more Project Euler problems.
+- **Total Solved Problems:** `81`
+- **Solved Problem Numbers:** `0–60`, `62–64`, `67`, `69`, `72`, `74`, `76–81`, `85`, `87`, `92`, `95`, `97`, `99`, and `104`.
+- **In-Progress / Unsolved:** `61`, `65`, `82`, `89`.
 
 ---
 
 ## ⚠️ Project Euler Spoiler Notice
 
-This repository contains working solutions to Project Euler problems. If you are currently solving these problems yourself, consider attempting them before looking at the source code.
+This repository contains working solutions and mathematical explanations. If you are solving these problems yourself, consider attempting them independently before viewing the source code and documentation.
 
 ---
 
@@ -424,6 +236,6 @@ This repository contains working solutions to Project Euler problems. If you are
 
 *Solving one problem at a time. Optimizing one solution at a time.*
 
-⭐ **If you find this repository interesting, consider giving it a star!**
+⭐ **If you find this repository helpful, consider giving it a star!**
 
 </div>

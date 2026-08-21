@@ -1,0 +1,7 @@
+Non prime digit lengths: 2
+Non prime digit lengths: 3
+Non prime digit lengths: 5
+Non prime digit lengths: 6
+Non prime digit lengths: 8
+Non prime digit lengths: 9
+Largest pandigital prime: 7652413
